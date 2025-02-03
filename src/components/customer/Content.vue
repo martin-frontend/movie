@@ -291,6 +291,9 @@ export default {
       this.$http.get(api).then(response => {
         console.log(response.data);
         if (response.data.success) {
+          // 移除不要的產品(復仇者聯盟,286368)
+          const deleteNames = ["復仇者聯盟4","286368"];
+          response.data.products = response.data.products.filter(item => !deleteNames.includes(item.title));
           vm.products = response.data.products;
           vm.products.forEach(item => {
             this.$set(item, "mylike", false);
@@ -351,10 +354,14 @@ export default {
           this.getCart();
         }
       });
+    },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   },
   computed: {
     selectCategory(category) {
+      this.scrollToTop();
       if (this.search === "") {
         if (this.category === "all") {
           return this.products;
