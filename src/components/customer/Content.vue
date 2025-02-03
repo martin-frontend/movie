@@ -59,7 +59,7 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline mr-auto" style="position: relative; max-width:206px">
+          <form class="form-inline mr-auto" style="position: relative;">
             <input
               class="form-control"
               type="search"
@@ -70,7 +70,7 @@
             <button
               class="btn btn-success"
               type="submit"
-              style="position: absolute; right:0 ;top:0 ;border-radius: 0 10px 10px 0;"
+              style="position: absolute; right:0 ;top:0 ;border-radius: 0 10px 10px 0; height: 100%;"
             >
               <i class="fas fa-search"></i>
             </button>
